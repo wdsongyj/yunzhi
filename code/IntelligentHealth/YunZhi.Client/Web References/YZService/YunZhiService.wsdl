@@ -1,0 +1,1225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserLoginResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="YunZhiResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataInfo">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="DataList" type="tns:ArrayOfDataTable" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDataTable">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DataTable" nillable="true">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPatientsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idCard" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPatientsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPatientsListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPatientInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="birtyary" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sex" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idnumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPatientInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddPatientInfoResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHealthy_RecordListByDocId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="docId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHealthy_RecordListByDocIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHealthy_RecordListByDocIdResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPatientInfoByPTID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="patientID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPatientInfoByPTIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPatientInfoByPTIDResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZhenLiaoListByPTID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hrid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZhenLiaoListByPTIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZhenLiaoListByPTIDResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryZhenLiaoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryZhenLiaoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryZhenLiaoListResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryProjectList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryProjectListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryProjectListResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectListAndPatientInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectListAndPatientInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectListAndPatientInfoResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelHealthRecode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hrid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelHealthRecodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelHealthRecodeResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRecorInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hrid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data05" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data06" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="table">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="delID" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateRecorInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateRecorInfoResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDrugInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDrugInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetDrugInfoResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZhiHuiTuiSongData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data05" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hosid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hosname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recordid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZhiHuiTuiSongDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZhiHuiTuiSongDataResult" type="tns:YunZhiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="YunZhiResult" nillable="true" type="tns:YunZhiResult" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:UserLogin" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientsListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPatientsList" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientsListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPatientsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPatientInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPatientInfo" />
+  </wsdl:message>
+  <wsdl:message name="AddPatientInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPatientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHealthy_RecordListByDocIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHealthy_RecordListByDocId" />
+  </wsdl:message>
+  <wsdl:message name="GetHealthy_RecordListByDocIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHealthy_RecordListByDocIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientInfoByPTIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPatientInfoByPTID" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientInfoByPTIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPatientInfoByPTIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZhenLiaoListByPTIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZhenLiaoListByPTID" />
+  </wsdl:message>
+  <wsdl:message name="GetZhenLiaoListByPTIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZhenLiaoListByPTIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryZhenLiaoListSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryZhenLiaoList" />
+  </wsdl:message>
+  <wsdl:message name="QueryZhenLiaoListSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryZhenLiaoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryProjectListSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryProjectList" />
+  </wsdl:message>
+  <wsdl:message name="QueryProjectListSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryProjectListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectListAndPatientInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectListAndPatientInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectListAndPatientInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectListAndPatientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelHealthRecodeSoapIn">
+    <wsdl:part name="parameters" element="tns:DelHealthRecode" />
+  </wsdl:message>
+  <wsdl:message name="DelHealthRecodeSoapOut">
+    <wsdl:part name="parameters" element="tns:DelHealthRecodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRecorInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRecorInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRecorInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRecorInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDrugInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetDrugInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetDrugInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetDrugInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZhiHuiTuiSongDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZhiHuiTuiSongData" />
+  </wsdl:message>
+  <wsdl:message name="GetZhiHuiTuiSongDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZhiHuiTuiSongDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpGetIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="pwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientsListHttpGetIn">
+    <wsdl:part name="idCard" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientsListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="AddPatientInfoHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="tel" type="s:string" />
+    <wsdl:part name="birtyary" type="s:string" />
+    <wsdl:part name="sex" type="s:string" />
+    <wsdl:part name="idnumber" type="s:string" />
+    <wsdl:part name="remark" type="s:string" />
+    <wsdl:part name="hid" type="s:string" />
+    <wsdl:part name="eid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPatientInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetHealthy_RecordListByDocIdHttpGetIn">
+    <wsdl:part name="docId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHealthy_RecordListByDocIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientInfoByPTIDHttpGetIn">
+    <wsdl:part name="patientID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientInfoByPTIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetZhenLiaoListByPTIDHttpGetIn">
+    <wsdl:part name="ptid" type="s:string" />
+    <wsdl:part name="hid" type="s:string" />
+    <wsdl:part name="hrid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetZhenLiaoListByPTIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="QueryZhenLiaoListHttpGetIn">
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+    <wsdl:part name="hid" type="s:string" />
+    <wsdl:part name="pname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryZhenLiaoListHttpGetOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="QueryProjectListHttpGetIn">
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+    <wsdl:part name="hid" type="s:string" />
+    <wsdl:part name="pname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryProjectListHttpGetOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectListAndPatientInfoHttpGetIn">
+    <wsdl:part name="eid" type="s:string" />
+    <wsdl:part name="hid" type="s:string" />
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectListAndPatientInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="DelHealthRecodeHttpGetIn">
+    <wsdl:part name="hrid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DelHealthRecodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetZhiHuiTuiSongDataHttpGetIn">
+    <wsdl:part name="data03" type="s:string" />
+    <wsdl:part name="data04" type="s:string" />
+    <wsdl:part name="data05" type="s:string" />
+    <wsdl:part name="hosid" type="s:string" />
+    <wsdl:part name="hosname" type="s:string" />
+    <wsdl:part name="docid" type="s:string" />
+    <wsdl:part name="docName" type="s:string" />
+    <wsdl:part name="recordid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetZhiHuiTuiSongDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpPostIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="pwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientsListHttpPostIn">
+    <wsdl:part name="idCard" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientsListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="AddPatientInfoHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="tel" type="s:string" />
+    <wsdl:part name="birtyary" type="s:string" />
+    <wsdl:part name="sex" type="s:string" />
+    <wsdl:part name="idnumber" type="s:string" />
+    <wsdl:part name="remark" type="s:string" />
+    <wsdl:part name="hid" type="s:string" />
+    <wsdl:part name="eid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPatientInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetHealthy_RecordListByDocIdHttpPostIn">
+    <wsdl:part name="docId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHealthy_RecordListByDocIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientInfoByPTIDHttpPostIn">
+    <wsdl:part name="patientID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientInfoByPTIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetZhenLiaoListByPTIDHttpPostIn">
+    <wsdl:part name="ptid" type="s:string" />
+    <wsdl:part name="hid" type="s:string" />
+    <wsdl:part name="hrid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetZhenLiaoListByPTIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="QueryZhenLiaoListHttpPostIn">
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+    <wsdl:part name="hid" type="s:string" />
+    <wsdl:part name="pname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryZhenLiaoListHttpPostOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="QueryProjectListHttpPostIn">
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+    <wsdl:part name="hid" type="s:string" />
+    <wsdl:part name="pname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryProjectListHttpPostOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectListAndPatientInfoHttpPostIn">
+    <wsdl:part name="eid" type="s:string" />
+    <wsdl:part name="hid" type="s:string" />
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectListAndPatientInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="DelHealthRecodeHttpPostIn">
+    <wsdl:part name="hrid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DelHealthRecodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:message name="GetZhiHuiTuiSongDataHttpPostIn">
+    <wsdl:part name="data03" type="s:string" />
+    <wsdl:part name="data04" type="s:string" />
+    <wsdl:part name="data05" type="s:string" />
+    <wsdl:part name="hosid" type="s:string" />
+    <wsdl:part name="hosname" type="s:string" />
+    <wsdl:part name="docid" type="s:string" />
+    <wsdl:part name="docName" type="s:string" />
+    <wsdl:part name="recordid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetZhiHuiTuiSongDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:YunZhiResult" />
+  </wsdl:message>
+  <wsdl:portType name="YunZhiServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input message="tns:UserLoginSoapIn" />
+      <wsdl:output message="tns:UserLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientsList">
+      <wsdl:input message="tns:GetPatientsListSoapIn" />
+      <wsdl:output message="tns:GetPatientsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPatientInfo">
+      <wsdl:input message="tns:AddPatientInfoSoapIn" />
+      <wsdl:output message="tns:AddPatientInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHealthy_RecordListByDocId">
+      <wsdl:input message="tns:GetHealthy_RecordListByDocIdSoapIn" />
+      <wsdl:output message="tns:GetHealthy_RecordListByDocIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoByPTID">
+      <wsdl:input message="tns:GetPatientInfoByPTIDSoapIn" />
+      <wsdl:output message="tns:GetPatientInfoByPTIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZhenLiaoListByPTID">
+      <wsdl:input message="tns:GetZhenLiaoListByPTIDSoapIn" />
+      <wsdl:output message="tns:GetZhenLiaoListByPTIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryZhenLiaoList">
+      <wsdl:input message="tns:QueryZhenLiaoListSoapIn" />
+      <wsdl:output message="tns:QueryZhenLiaoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryProjectList">
+      <wsdl:input message="tns:QueryProjectListSoapIn" />
+      <wsdl:output message="tns:QueryProjectListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectListAndPatientInfo">
+      <wsdl:input message="tns:GetProjectListAndPatientInfoSoapIn" />
+      <wsdl:output message="tns:GetProjectListAndPatientInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelHealthRecode">
+      <wsdl:input message="tns:DelHealthRecodeSoapIn" />
+      <wsdl:output message="tns:DelHealthRecodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecorInfo">
+      <wsdl:input message="tns:UpdateRecorInfoSoapIn" />
+      <wsdl:output message="tns:UpdateRecorInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDrugInfo">
+      <wsdl:input message="tns:SetDrugInfoSoapIn" />
+      <wsdl:output message="tns:SetDrugInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZhiHuiTuiSongData">
+      <wsdl:input message="tns:GetZhiHuiTuiSongDataSoapIn" />
+      <wsdl:output message="tns:GetZhiHuiTuiSongDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="YunZhiServiceHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input message="tns:UserLoginHttpGetIn" />
+      <wsdl:output message="tns:UserLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientsList">
+      <wsdl:input message="tns:GetPatientsListHttpGetIn" />
+      <wsdl:output message="tns:GetPatientsListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPatientInfo">
+      <wsdl:input message="tns:AddPatientInfoHttpGetIn" />
+      <wsdl:output message="tns:AddPatientInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHealthy_RecordListByDocId">
+      <wsdl:input message="tns:GetHealthy_RecordListByDocIdHttpGetIn" />
+      <wsdl:output message="tns:GetHealthy_RecordListByDocIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoByPTID">
+      <wsdl:input message="tns:GetPatientInfoByPTIDHttpGetIn" />
+      <wsdl:output message="tns:GetPatientInfoByPTIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZhenLiaoListByPTID">
+      <wsdl:input message="tns:GetZhenLiaoListByPTIDHttpGetIn" />
+      <wsdl:output message="tns:GetZhenLiaoListByPTIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryZhenLiaoList">
+      <wsdl:input message="tns:QueryZhenLiaoListHttpGetIn" />
+      <wsdl:output message="tns:QueryZhenLiaoListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryProjectList">
+      <wsdl:input message="tns:QueryProjectListHttpGetIn" />
+      <wsdl:output message="tns:QueryProjectListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectListAndPatientInfo">
+      <wsdl:input message="tns:GetProjectListAndPatientInfoHttpGetIn" />
+      <wsdl:output message="tns:GetProjectListAndPatientInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelHealthRecode">
+      <wsdl:input message="tns:DelHealthRecodeHttpGetIn" />
+      <wsdl:output message="tns:DelHealthRecodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZhiHuiTuiSongData">
+      <wsdl:input message="tns:GetZhiHuiTuiSongDataHttpGetIn" />
+      <wsdl:output message="tns:GetZhiHuiTuiSongDataHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="YunZhiServiceHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input message="tns:UserLoginHttpPostIn" />
+      <wsdl:output message="tns:UserLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientsList">
+      <wsdl:input message="tns:GetPatientsListHttpPostIn" />
+      <wsdl:output message="tns:GetPatientsListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPatientInfo">
+      <wsdl:input message="tns:AddPatientInfoHttpPostIn" />
+      <wsdl:output message="tns:AddPatientInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHealthy_RecordListByDocId">
+      <wsdl:input message="tns:GetHealthy_RecordListByDocIdHttpPostIn" />
+      <wsdl:output message="tns:GetHealthy_RecordListByDocIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoByPTID">
+      <wsdl:input message="tns:GetPatientInfoByPTIDHttpPostIn" />
+      <wsdl:output message="tns:GetPatientInfoByPTIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZhenLiaoListByPTID">
+      <wsdl:input message="tns:GetZhenLiaoListByPTIDHttpPostIn" />
+      <wsdl:output message="tns:GetZhenLiaoListByPTIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryZhenLiaoList">
+      <wsdl:input message="tns:QueryZhenLiaoListHttpPostIn" />
+      <wsdl:output message="tns:QueryZhenLiaoListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryProjectList">
+      <wsdl:input message="tns:QueryProjectListHttpPostIn" />
+      <wsdl:output message="tns:QueryProjectListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectListAndPatientInfo">
+      <wsdl:input message="tns:GetProjectListAndPatientInfoHttpPostIn" />
+      <wsdl:output message="tns:GetProjectListAndPatientInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelHealthRecode">
+      <wsdl:input message="tns:DelHealthRecodeHttpPostIn" />
+      <wsdl:output message="tns:DelHealthRecodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZhiHuiTuiSongData">
+      <wsdl:input message="tns:GetZhiHuiTuiSongDataHttpPostIn" />
+      <wsdl:output message="tns:GetZhiHuiTuiSongDataHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="YunZhiServiceSoap" type="tns:YunZhiServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap:operation soapAction="http://tempuri.org/UserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientsList">
+      <soap:operation soapAction="http://tempuri.org/GetPatientsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPatientInfo">
+      <soap:operation soapAction="http://tempuri.org/AddPatientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHealthy_RecordListByDocId">
+      <soap:operation soapAction="http://tempuri.org/GetHealthy_RecordListByDocId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoByPTID">
+      <soap:operation soapAction="http://tempuri.org/GetPatientInfoByPTID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZhenLiaoListByPTID">
+      <soap:operation soapAction="http://tempuri.org/GetZhenLiaoListByPTID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryZhenLiaoList">
+      <soap:operation soapAction="http://tempuri.org/QueryZhenLiaoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryProjectList">
+      <soap:operation soapAction="http://tempuri.org/QueryProjectList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectListAndPatientInfo">
+      <soap:operation soapAction="http://tempuri.org/GetProjectListAndPatientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelHealthRecode">
+      <soap:operation soapAction="http://tempuri.org/DelHealthRecode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecorInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateRecorInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDrugInfo">
+      <soap:operation soapAction="http://tempuri.org/SetDrugInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZhiHuiTuiSongData">
+      <soap:operation soapAction="http://tempuri.org/GetZhiHuiTuiSongData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="YunZhiServiceSoap12" type="tns:YunZhiServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap12:operation soapAction="http://tempuri.org/UserLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientsList">
+      <soap12:operation soapAction="http://tempuri.org/GetPatientsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPatientInfo">
+      <soap12:operation soapAction="http://tempuri.org/AddPatientInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHealthy_RecordListByDocId">
+      <soap12:operation soapAction="http://tempuri.org/GetHealthy_RecordListByDocId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoByPTID">
+      <soap12:operation soapAction="http://tempuri.org/GetPatientInfoByPTID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZhenLiaoListByPTID">
+      <soap12:operation soapAction="http://tempuri.org/GetZhenLiaoListByPTID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryZhenLiaoList">
+      <soap12:operation soapAction="http://tempuri.org/QueryZhenLiaoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryProjectList">
+      <soap12:operation soapAction="http://tempuri.org/QueryProjectList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectListAndPatientInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectListAndPatientInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelHealthRecode">
+      <soap12:operation soapAction="http://tempuri.org/DelHealthRecode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecorInfo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRecorInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDrugInfo">
+      <soap12:operation soapAction="http://tempuri.org/SetDrugInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZhiHuiTuiSongData">
+      <soap12:operation soapAction="http://tempuri.org/GetZhiHuiTuiSongData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="YunZhiServiceHttpGet" type="tns:YunZhiServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <http:operation location="/UserLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientsList">
+      <http:operation location="/GetPatientsList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPatientInfo">
+      <http:operation location="/AddPatientInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHealthy_RecordListByDocId">
+      <http:operation location="/GetHealthy_RecordListByDocId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoByPTID">
+      <http:operation location="/GetPatientInfoByPTID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZhenLiaoListByPTID">
+      <http:operation location="/GetZhenLiaoListByPTID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryZhenLiaoList">
+      <http:operation location="/QueryZhenLiaoList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryProjectList">
+      <http:operation location="/QueryProjectList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectListAndPatientInfo">
+      <http:operation location="/GetProjectListAndPatientInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelHealthRecode">
+      <http:operation location="/DelHealthRecode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZhiHuiTuiSongData">
+      <http:operation location="/GetZhiHuiTuiSongData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="YunZhiServiceHttpPost" type="tns:YunZhiServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <http:operation location="/UserLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientsList">
+      <http:operation location="/GetPatientsList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPatientInfo">
+      <http:operation location="/AddPatientInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHealthy_RecordListByDocId">
+      <http:operation location="/GetHealthy_RecordListByDocId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoByPTID">
+      <http:operation location="/GetPatientInfoByPTID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZhenLiaoListByPTID">
+      <http:operation location="/GetZhenLiaoListByPTID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryZhenLiaoList">
+      <http:operation location="/QueryZhenLiaoList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryProjectList">
+      <http:operation location="/QueryProjectList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectListAndPatientInfo">
+      <http:operation location="/GetProjectListAndPatientInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelHealthRecode">
+      <http:operation location="/DelHealthRecode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZhiHuiTuiSongData">
+      <http:operation location="/GetZhiHuiTuiSongData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="YunZhiService">
+    <wsdl:port name="YunZhiServiceSoap" binding="tns:YunZhiServiceSoap">
+      <soap:address location="http://47.104.235.16/yzyl/Webservice/YunZhiService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="YunZhiServiceSoap12" binding="tns:YunZhiServiceSoap12">
+      <soap12:address location="http://47.104.235.16/yzyl/Webservice/YunZhiService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="YunZhiServiceHttpGet" binding="tns:YunZhiServiceHttpGet">
+      <http:address location="http://47.104.235.16/yzyl/Webservice/YunZhiService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="YunZhiServiceHttpPost" binding="tns:YunZhiServiceHttpPost">
+      <http:address location="http://47.104.235.16/yzyl/Webservice/YunZhiService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

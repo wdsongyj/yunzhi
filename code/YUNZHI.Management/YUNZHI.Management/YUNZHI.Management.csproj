@@ -1,0 +1,1494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2326DB96-6E37-49FA-A9C4-3BC2607F2A65}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YUNZHI.Management</RootNamespace>
+    <AssemblyName>YUNZHI.Management</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager">
+      <HintPath>commonassebly\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="HY.Common">
+      <HintPath>commonassebly\HY.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="HY.Domain">
+      <HintPath>commonassebly\HY.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="HY.Service">
+      <HintPath>commonassebly\HY.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>commonassebly\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Manage\lib\ueditor\1.4.3\net\Bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>commonassebly\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>commonassebly\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite">
+      <HintPath>commonassebly\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer">
+      <HintPath>commonassebly\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>commonassebly\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>commonassebly\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Manage\404.html" />
+    <Content Include="Manage\admin-add.html" />
+    <Content Include="Manage\admin-list.html" />
+    <Content Include="Manage\admin-password-edit.html" />
+    <Content Include="Manage\admin-permission.html" />
+    <Content Include="Manage\admin-role-add.html" />
+    <Content Include="Manage\admin-role.html" />
+    <Content Include="Manage\article-add.html" />
+    <Content Include="Manage\article-class-edit.html" />
+    <Content Include="Manage\article-class.html" />
+    <Content Include="Manage\article-list.html" />
+    <Content Include="Manage\change-password.html" />
+    <Content Include="Manage\charts-1.html" />
+    <Content Include="Manage\charts-2.html" />
+    <Content Include="Manage\charts-3.html" />
+    <Content Include="Manage\charts-4.html" />
+    <Content Include="Manage\charts-5.html" />
+    <Content Include="Manage\charts-6.html" />
+    <Content Include="Manage\charts-7.html" />
+    <Content Include="Manage\codeing.html" />
+    <Content Include="Manage\css\bootstrap.min.css" />
+    <Content Include="Manage\css\css.css" />
+    <Content Include="Manage\css\frame.css" />
+    <Content Include="Manage\css\frame1.css" />
+    <Content Include="Manage\css\frame2.css" />
+    <Content Include="Manage\css\normalize3.0.2.min.css" />
+    <Content Include="Manage\css\Search.css" />
+    <Content Include="Manage\css\win8m.css" />
+    <Content Include="Manage\favicon.ico" />
+    <Content Include="Manage\feedback-list.html" />
+    <Content Include="Manage\highcharts\drilldown.js" />
+    <Content Include="Manage\highcharts\exporting.js" />
+    <Content Include="Manage\highcharts\highcharts-3d.js" />
+    <Content Include="Manage\highcharts\highcharts.js" />
+    <Content Include="Manage\highcharts\no-data-to-display.js" />
+    <Content Include="Manage\highcharts\新建文本文档.html" />
+    <Content Include="Manage\Login.aspx" />
+    <Content Include="Manage\Logout.aspx" />
+    <Content Include="Manage\index-2.html" />
+    <Content Include="Manage\index.html" />
+    <Content Include="Manage\lib\datatables\1.10.0\jquery.dataTables.min.js" />
+    <Content Include="Manage\lib\DD_belatedPNG_0.0.8a-min.js" />
+    <Content Include="Manage\lib\echarts\3.4.0\echarts.common.min.js" />
+    <Content Include="Manage\lib\expressInstall.swf" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\highcharts-3d.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\highcharts-more.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\highcharts.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\accessibility.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\accessibility.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\annotations.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\annotations.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\boost.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\boost.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\broken-axis.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\broken-axis.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\data.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\data.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\drilldown.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\drilldown.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\exporting.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\exporting.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\funnel.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\funnel.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\gantt.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\gantt.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\grid-axis.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\grid-axis.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\heatmap.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\heatmap.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\no-data-to-display.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\no-data-to-display.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\offline-exporting.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\offline-exporting.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\overlapping-datalabels.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\overlapping-datalabels.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\series-label.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\series-label.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\solid-gauge.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\solid-gauge.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\treemap.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\treemap.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\xrange-series.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\modules\xrange-series.src.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\themes\dark-blue.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\themes\dark-green.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\themes\dark-unica.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\themes\gray.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\themes\grid-light.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\themes\grid.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\themes\sand-signika.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\js\themes\skies.js" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\readme.txt" />
+    <Content Include="Manage\lib\html5shiv.js" />
+    <Content Include="Manage\lib\Hui-iconfont\1.0.8\demo.html" />
+    <Content Include="Manage\lib\Hui-iconfont\1.0.8\iconfont.css" />
+    <Content Include="Manage\lib\Hui-iconfont\1.0.8\iconfont.min.css" />
+    <Content Include="Manage\lib\Hui-iconfont\1.0.8\iconfont.svg" />
+    <Content Include="Manage\lib\icheck\aero%402x.png" />
+    <Content Include="Manage\lib\icheck\aero.png" />
+    <Content Include="Manage\lib\icheck\blue%402x.png" />
+    <Content Include="Manage\lib\icheck\blue.png" />
+    <Content Include="Manage\lib\icheck\green%402x.png" />
+    <Content Include="Manage\lib\icheck\green.png" />
+    <Content Include="Manage\lib\icheck\grey%402x.png" />
+    <Content Include="Manage\lib\icheck\grey.png" />
+    <Content Include="Manage\lib\icheck\icheck.css" />
+    <Content Include="Manage\lib\icheck\jquery.icheck.min.js" />
+    <Content Include="Manage\lib\icheck\minimal%402x.png" />
+    <Content Include="Manage\lib\icheck\minimal.png" />
+    <Content Include="Manage\lib\icheck\orange%402x.png" />
+    <Content Include="Manage\lib\icheck\orange.png" />
+    <Content Include="Manage\lib\icheck\pink%402x.png" />
+    <Content Include="Manage\lib\icheck\pink.png" />
+    <Content Include="Manage\lib\icheck\purple%402x.png" />
+    <Content Include="Manage\lib\icheck\purple.png" />
+    <Content Include="Manage\lib\icheck\red%402x.png" />
+    <Content Include="Manage\lib\icheck\red.png" />
+    <Content Include="Manage\lib\icheck\yellow%402x.png" />
+    <Content Include="Manage\lib\icheck\yellow.png" />
+    <Content Include="Manage\lib\jquery.contextmenu\jquery.contextmenu.r2.js" />
+    <Content Include="Manage\lib\jquery.SuperSlide\2.1.1\jquery.SuperSlide.min.js" />
+    <Content Include="Manage\lib\jquery.validation\1.14.0\additional-methods.js" />
+    <Content Include="Manage\lib\jquery.validation\1.14.0\jquery.validate.js" />
+    <Content Include="Manage\lib\jquery.validation\1.14.0\messages_zh.js" />
+    <Content Include="Manage\lib\jquery.validation\1.14.0\validate-methods.js" />
+    <Content Include="Manage\lib\jquery\1.9.1\jquery.js" />
+    <Content Include="Manage\lib\jquery\1.9.1\jquery.min.js" />
+    <Content Include="Manage\lib\jselect-1.0.js" />
+    <Content Include="Manage\lib\layer\2.4\layer.js" />
+    <Content Include="Manage\lib\layer\2.4\skin\default\icon-ext.png" />
+    <Content Include="Manage\lib\layer\2.4\skin\default\icon.png" />
+    <Content Include="Manage\lib\layer\2.4\skin\default\loading-0.gif" />
+    <Content Include="Manage\lib\layer\2.4\skin\default\loading-1.gif" />
+    <Content Include="Manage\lib\layer\2.4\skin\default\loading-2.gif" />
+    <Content Include="Manage\lib\layer\2.4\skin\layer.css" />
+    <Content Include="Manage\lib\laypage\1.2\laypage.js" />
+    <Content Include="Manage\lib\laypage\1.2\skin\laypage.css" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\css\lightbox.css" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\examples.html" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\images\close.png" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\images\loading.gif" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\images\next.png" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\images\prev.png" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\js\lightbox-plus-jquery.js" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\js\lightbox.js" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\js\lightbox.min.js" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\calendar.js" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\lang\en.js" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\lang\zh-cn.js" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\lang\zh-tw.js" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\skin\datePicker.gif" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\skin\default\datepicker.css" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\skin\default\img.gif" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\skin\twoer\datepicker-dev.css" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\skin\twoer\datepicker.css" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\skin\twoer\img.gif" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\skin\twoer\img.png" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\skin\WdatePicker.css" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\skin\whyGreen\bg.jpg" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\skin\whyGreen\datepicker.css" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\skin\whyGreen\img.gif" />
+    <Content Include="Manage\lib\My97DatePicker\4.8\WdatePicker.js" />
+    <Content Include="Manage\lib\nprogress\0.2.0\nprogress.css" />
+    <Content Include="Manage\lib\nprogress\0.2.0\nprogress.js" />
+    <Content Include="Manage\lib\nprogress\0.2.0\nprogress.min.css" />
+    <Content Include="Manage\lib\nprogress\0.2.0\nprogress.min.js" />
+    <Content Include="Manage\lib\respond.min.js" />
+    <Content Include="Manage\lib\squid.js" />
+    <Content Include="Manage\lib\swfobject.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\anchor\anchor.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\attachment.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\attachment.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\attachment.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\images\alignicon.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\images\bg.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\images\file-icons.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\images\icons.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\images\icons.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\images\image.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\images\progress.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\images\success.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\attachment\images\success.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\background\background.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\background\background.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\background\background.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\background\images\bg.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\background\images\success.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\charts\chart.config.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\charts\charts.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\charts\charts.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\charts\charts.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\charts\images\charts0.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\charts\images\charts1.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\charts\images\charts2.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\charts\images\charts3.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\charts\images\charts4.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\charts\images\charts5.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\emotion.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\emotion.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\emotion.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\images\0.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\images\bface.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\images\cface.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\images\fface.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\images\tface.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\images\wface.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\emotion\images\yface.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\gmap\gmap.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\help\help.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\help\help.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\help\help.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\image\image.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\image\image.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\image\image.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\image\images\alignicon.jpg" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\image\images\bg.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\image\images\icons.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\image\images\icons.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\image\images\image.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\image\images\progress.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\image\images\success.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\image\images\success.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\insertframe\insertframe.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\internal.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\link\link.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\map\map.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\map\show.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\music\music.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\music\music.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\music\music.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\preview\preview.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\addimg.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\brush.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\delimg.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\empty.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\eraser.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\redo.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\redoH.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\scale.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\size.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\undo.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\images\undoH.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\scrawl.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\scrawl.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\scrawl\scrawl.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\spechars\spechars.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\spechars\spechars.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\table\dragicon.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\table\edittable.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\table\edittable.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\table\edittable.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\table\edittd.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\table\edittip.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\template\config.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\template\images\bg.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\template\images\pre0.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\template\images\pre1.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\template\images\pre2.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\template\images\pre3.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\template\images\pre4.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\template\template.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\template\template.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\template\template.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\bg.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\center_focus.jpg" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\file-icons.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\file-icons.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\icons.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\icons.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\image.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\left_focus.jpg" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\none_focus.jpg" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\progress.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\right_focus.jpg" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\success.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\images\success.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\video.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\video.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\video\video.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\webapp\webapp.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\wordimage\tangram.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\wordimage\wordimage.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\dialogs\wordimage\wordimage.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\index.html" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\lib\commons-codec-1.9.jar" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\lib\commons-fileupload-1.3.1.jar" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\lib\commons-io-2.4.jar" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\lib\json.jar" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\lib\ueditor-1.1.1.jar" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\ActionEnter.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\ConfigManager.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\ActionMap.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\ActionState.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\AppInfo.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\BaseState.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\FileType.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\MIMEType.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\MultiState.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\define\State.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\Encoder.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\hunter\FileManager.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\hunter\ImageHunter.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\PathFormat.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\upload\Base64Uploader.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\upload\BinaryUploader.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\upload\StorageManager.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\src\com\baidu\ueditor\upload\Uploader.java" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\en.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\addimage.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\background.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\button.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\copy.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\deletedisable.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\deleteenable.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\listbackground.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\localimage.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\music.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\rotateleftdisable.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\rotateleftenable.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\rotaterightdisable.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\rotaterightenable.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\en\images\upload.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\zh-cn\images\copy.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\zh-cn\images\localimage.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\zh-cn\images\music.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\zh-cn\images\upload.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\lang\zh-cn\zh-cn.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\net\Bin\Newtonsoft.Json.dll" />
+    <Content Include="Manage\lib\ueditor\1.4.3\net\Bin\Newtonsoft.Json.pdb" />
+    <Content Include="Manage\lib\ueditor\1.4.3\net\Bin\Newtonsoft.Json.xml" />
+    <Content Include="Manage\lib\ueditor\1.4.3\net\net.sln" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\css\ueditor.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\css\ueditor.min.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\dialogbase.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\anchor.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\arrow.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\arrow_down.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\arrow_up.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\button-bg.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\cancelbutton.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\charts.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\cursor_h.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\cursor_h.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\cursor_v.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\cursor_v.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\dialog-title-bg.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\filescan.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\highlighted.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\icons-all.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\icons.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\icons.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\loaderror.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\loading.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\lock.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\pagebreak.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\scale.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\sortable.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\spacer.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\sparator_v.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\table-cell-align.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\toolbar_bg.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\unhighlighted.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\upload.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\videologo.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\word.gif" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\default\images\wordpaste.png" />
+    <Content Include="Manage\lib\ueditor\1.4.3\themes\iframe.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\codemirror\codemirror.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\codemirror\codemirror.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\highcharts-more.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\highcharts.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\highcharts.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\annotations.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\data.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\data.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\exporting.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\funnel.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\map.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\map.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\themes\gray.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\themes\grid.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\highcharts\themes\skies.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\jquery-1.10.2.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\jquery-1.10.2.min.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\video-js\font\vjs.svg" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\video-js\video-js.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\video-js\video-js.min.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\video-js\video-js.swf" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\video-js\video.dev.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\video-js\video.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\Uploader.swf" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\webuploader.css" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\webuploader.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\webuploader.min.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="Manage\lib\ueditor\1.4.3\ueditor.all.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\ueditor.all.min.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\ueditor.config.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\ueditor.parse.js" />
+    <Content Include="Manage\lib\ueditor\1.4.3\ueditor.parse.min.js" />
+    <Content Include="Manage\lib\Validform\5.3.2\passwordStrength-min.js" />
+    <Content Include="Manage\lib\Validform\5.3.2\Validform.js" />
+    <Content Include="Manage\lib\Validform\5.3.2\Validform.min.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\cropper\cropper.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\cropper\index.html" />
+    <Content Include="Manage\lib\webuploader\0.1.5\cropper\uploader.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\expressInstall.swf" />
+    <Content Include="Manage\lib\webuploader\0.1.5\image-upload\index.html" />
+    <Content Include="Manage\lib\webuploader\0.1.5\image-upload\upload.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\images\bg.png" />
+    <Content Include="Manage\lib\webuploader\0.1.5\images\icons.png" />
+    <Content Include="Manage\lib\webuploader\0.1.5\images\image.png" />
+    <Content Include="Manage\lib\webuploader\0.1.5\images\progress.png" />
+    <Content Include="Manage\lib\webuploader\0.1.5\images\success.png" />
+    <Content Include="Manage\lib\webuploader\0.1.5\md5-demo\index.html" />
+    <Content Include="Manage\lib\webuploader\0.1.5\md5-demo\script.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\requirejs\app.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\requirejs\index.html" />
+    <Content Include="Manage\lib\webuploader\0.1.5\requirejs\require.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\server\crossdomain.xml" />
+    <Content Include="Manage\lib\webuploader\0.1.5\Uploader.swf" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.css" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.custom.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.custom.min.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.fis.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.flashonly.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.flashonly.min.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.html5only.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.html5only.min.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.min.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.noimage.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.noimage.min.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.nolog.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.nolog.min.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.withoutimage.js" />
+    <Content Include="Manage\lib\webuploader\0.1.5\webuploader.withoutimage.min.js" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\api.js" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\common.css" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\common_ie6.css" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\apiMenu.gif" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\apiMenu.png" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\background.jpg" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\chinese.png" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\close.png" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\contact-bg.png" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\english.png" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\header-bg.png" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\lightbulb.png" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\overlay_arrow.gif" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\overlay_arrow.png" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\overlay_bg.png" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\overlay_close_IE6.gif" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\zTreeStandard.gif" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\img\zTreeStandard.png" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\jquery-1.6.2.min.js" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\jquery.ztree.core-3.5.js" />
+    <Content Include="Manage\lib\zTree\v3\api\apiCss\zTreeStyleForApi.css" />
+    <Content Include="Manage\lib\zTree\v3\api\API_cn.html" />
+    <Content Include="Manage\lib\zTree\v3\api\API_en.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\fn.zTree.destroy.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\fn.zTree.getZTreeObj.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\fn.zTree.init.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\fn.zTree._z.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.async.autoParam.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.async.contentType.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.async.dataFilter.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.async.dataType.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.async.enable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.async.otherParam.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.async.type.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.async.url.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeAsync.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeCheck.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeCollapse.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeDblClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeDrag.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeDragOpen.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeDrop.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeEditName.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeExpand.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeMouseDown.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeMouseUp.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeRemove.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeRename.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.beforeRightClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onAsyncError.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onAsyncSuccess.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onCheck.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onCollapse.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onDblClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onDrag.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onDragMove.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onDrop.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onExpand.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onMouseDown.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onMouseUp.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onNodeCreated.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onRemove.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onRename.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.callback.onRightClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.check.autoCheckTrigger.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.check.chkboxType.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.check.chkDisabledInherit.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.check.chkStyle.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.check.enable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.check.nocheckInherit.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.check.radioType.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.data.keep.leaf.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.data.keep.parent.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.data.key.checked.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.data.key.children.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.data.key.name.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.data.key.title.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.data.key.url.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.data.simpleData.enable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.data.simpleData.idKey.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.data.simpleData.pIdKey.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.data.simpleData.rootPId.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.drag.autoExpandTrigger.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.drag.autoOpenTime.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.drag.borderMax.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.drag.borderMin.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.drag.inner.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.drag.isCopy.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.drag.isMove.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.drag.maxShowNodeNum.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.drag.minMoveSize.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.drag.next.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.drag.prev.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.editNameSelectAll.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.enable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.removeTitle.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.renameTitle.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.showRemoveBtn.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.edit.showRenameBtn.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.treeId.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.treeObj.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.addDiyDom.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.addHoverDom.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.autoCancelSelected.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.dblClickExpand.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.expandSpeed.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.fontCss.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.nameIsHTML.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.removeHoverDom.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.selectedMulti.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.showIcon.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.showLine.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.showTitle.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\setting.view.txtSelectedEnable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.checked.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.checkedOld.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.check_Child_State.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.check_Focus.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.children.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.chkDisabled.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.click.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.diy.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.editNameFlag.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.getCheckStatus.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.getNextNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.getParentNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.getPreNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.halfCheck.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.icon.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.iconClose.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.iconOpen.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.iconSkin.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.isAjaxing.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.isFirstNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.isHidden.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.isHover.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.isLastNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.isParent.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.level.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.name.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.nocheck.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.open.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.parentTId.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.target.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.tId.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.url.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\treeNode.zAsync.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.addNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.cancelEditName.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.cancelSelectedNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.checkAllNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.checkNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.copyNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.destroy.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.editName.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.expandAll.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.expandNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.getChangeCheckedNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.getCheckedNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.getNodeByParam.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.getNodeByTId.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.getNodeIndex.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.getNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.getNodesByFilter.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.getNodesByParam.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.getNodesByParamFuzzy.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.getSelectedNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.hideNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.hideNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.moveNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.reAsyncChildNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.refresh.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.removeChildNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.removeNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.selectNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.setChkDisabled.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.setEditable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.setting.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.showNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.showNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.transformToArray.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.transformTozTreeNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\cn\zTreeObj.updateNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\fn.zTree.destroy.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\fn.zTree.getZTreeObj.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\fn.zTree.init.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\fn.zTree._z.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.async.autoParam.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.async.contentType.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.async.dataFilter.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.async.dataType.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.async.enable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.async.otherParam.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.async.type.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.async.url.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeAsync.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeCheck.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeCollapse.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeDblClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeDrag.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeDragOpen.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeDrop.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeEditName.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeExpand.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeMouseDown.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeMouseUp.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeRemove.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeRename.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.beforeRightClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onAsyncError.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onAsyncSuccess.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onCheck.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onCollapse.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onDblClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onDrag.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onDragMove.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onDrop.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onExpand.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onMouseDown.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onMouseUp.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onNodeCreated.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onRemove.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onRename.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.callback.onRightClick.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.check.autoCheckTrigger.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.check.chkboxType.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.check.chkDisabledInherit.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.check.chkStyle.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.check.enable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.check.nocheckInherit.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.check.radioType.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.data.keep.leaf.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.data.keep.parent.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.data.key.checked.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.data.key.children.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.data.key.name.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.data.key.title.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.data.key.url.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.data.simpleData.enable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.data.simpleData.idKey.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.data.simpleData.pIdKey.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.data.simpleData.rootPId.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.drag.autoExpandTrigger.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.drag.autoOpenTime.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.drag.borderMax.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.drag.borderMin.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.drag.inner.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.drag.isCopy.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.drag.isMove.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.drag.maxShowNodeNum.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.drag.minMoveSize.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.drag.next.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.drag.prev.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.editNameSelectAll.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.enable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.removeTitle.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.renameTitle.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.showRemoveBtn.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.edit.showRenameBtn.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.treeId.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.treeObj.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.addDiyDom.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.addHoverDom.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.autoCancelSelected.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.dblClickExpand.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.expandSpeed.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.fontCss.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.nameIsHTML.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.removeHoverDom.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.selectedMulti.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.showIcon.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.showLine.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.showTitle.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\setting.view.txtSelectedEnable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.checked.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.checkedOld.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.check_Child_State.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.check_Focus.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.children.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.chkDisabled.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.click.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.diy.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.editNameFlag.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.getCheckStatus.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.getNextNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.getParentNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.getPreNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.halfCheck.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.icon.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.iconClose.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.iconOpen.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.iconSkin.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.isAjaxing.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.isFirstNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.isHidden.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.isHover.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.isLastNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.isParent.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.level.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.name.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.nocheck.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.open.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.parentTId.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.target.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.tId.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.url.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\treeNode.zAsync.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.addNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.cancelEditName.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.cancelSelectedNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.checkAllNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.checkNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.copyNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.destroy.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.editName.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.expandAll.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.expandNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.getChangeCheckedNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.getCheckedNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.getNodeByParam.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.getNodeByTId.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.getNodeIndex.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.getNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.getNodesByFilter.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.getNodesByParam.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.getNodesByParamFuzzy.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.getSelectedNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.hideNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.hideNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.moveNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.reAsyncChildNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.refresh.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.removeChildNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.removeNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.selectNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.setChkDisabled.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.setEditable.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.setting.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.showNode.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.showNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.transformToArray.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.transformTozTreeNodes.html" />
+    <Content Include="Manage\lib\zTree\v3\api\en\zTreeObj.updateNode.html" />
+    <Content Include="Manage\lib\zTree\v3\css\metroStyle\img\line_conn.png" />
+    <Content Include="Manage\lib\zTree\v3\css\metroStyle\img\loading.gif" />
+    <Content Include="Manage\lib\zTree\v3\css\metroStyle\img\metro.gif" />
+    <Content Include="Manage\lib\zTree\v3\css\metroStyle\img\metro.png" />
+    <Content Include="Manage\lib\zTree\v3\css\metroStyle\metroStyle.css" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\loading.gif" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="Manage\lib\zTree\v3\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="Manage\lib\zTree\v3\js\jquery.ztree.all-3.5.js" />
+    <Content Include="Manage\lib\zTree\v3\js\jquery.ztree.all-3.5.min.js" />
+    <Content Include="Manage\lib\zTree\v3\js\jquery.ztree.core-3.5.js" />
+    <Content Include="Manage\lib\zTree\v3\js\jquery.ztree.core-3.5.min.js" />
+    <Content Include="Manage\lib\zTree\v3\js\jquery.ztree.excheck-3.5.js" />
+    <Content Include="Manage\lib\zTree\v3\js\jquery.ztree.excheck-3.5.min.js" />
+    <Content Include="Manage\lib\zTree\v3\js\jquery.ztree.exedit-3.5.js" />
+    <Content Include="Manage\lib\zTree\v3\js\jquery.ztree.exedit-3.5.min.js" />
+    <Content Include="Manage\lib\zTree\v3\js\jquery.ztree.exedit.js" />
+    <Content Include="Manage\lib\zTree\v3\js\jquery.ztree.exhide-3.5.js" />
+    <Content Include="Manage\lib\zTree\v3\js\jquery.ztree.exhide-3.5.min.js" />
+    <Content Include="Manage\login.html" />
+    <Content Include="Manage\member-add.html" />
+    <Content Include="Manage\member-del.html" />
+    <Content Include="Manage\member-list.html" />
+    <Content Include="Manage\member-record-browse.html" />
+    <Content Include="Manage\member-record-download.html" />
+    <Content Include="Manage\member-record-share.html" />
+    <Content Include="Manage\member-show.html" />
+    <Content Include="Manage\picture-add.html" />
+    <Content Include="Manage\picture-list.html" />
+    <Content Include="Manage\picture-show.html" />
+    <Content Include="Manage\product-add.html" />
+    <Content Include="Manage\product-brand.html" />
+    <Content Include="Manage\product-category-add.html" />
+    <Content Include="Manage\product-category.html" />
+    <Content Include="Manage\product-list.html" />
+    <Content Include="Manage\record-browse.html" />
+    <Content Include="Manage\record-download.html" />
+    <Content Include="Manage\record-share.html" />
+    <Content Include="Manage\robots.txt" />
+    <Content Include="Manage\static\h-ui.admin\css\H-ui.admin.css" />
+    <Content Include="Manage\static\h-ui.admin\css\H-ui.login.css" />
+    <Content Include="Manage\static\h-ui.admin\css\style.css" />
+    <Content Include="Manage\static\h-ui.admin\images\acrossTab\acrossTab-2.png" />
+    <Content Include="Manage\static\h-ui.admin\images\admin-login-bg.jpg" />
+    <Content Include="Manage\static\h-ui.admin\images\admin-loginform-bg.png" />
+    <Content Include="Manage\static\h-ui.admin\images\cn.gif" />
+    <Content Include="Manage\static\h-ui.admin\images\loading.gif" />
+    <Content Include="Manage\static\h-ui.admin\images\logo.png" />
+    <Content Include="Manage\static\h-ui.admin\images\um.gif" />
+    <Content Include="Manage\static\h-ui.admin\js\de_DE.txt" />
+    <Content Include="Manage\static\h-ui.admin\js\H-ui.admin.js" />
+    <Content Include="Manage\static\h-ui.admin\skin\blue\acrossTab-bg.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\blue\acrossTab.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\blue\icon_arrow.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\blue\skin.css" />
+    <Content Include="Manage\static\h-ui.admin\skin\default\acrossTab-bg.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\default\acrossTab.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\default\icon_arrow.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\default\skin.css" />
+    <Content Include="Manage\static\h-ui.admin\skin\green\acrossTab-bg.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\green\acrossTab.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\green\icon_arrow.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\green\skin.css" />
+    <Content Include="Manage\static\h-ui.admin\skin\orange\acrossTab-bg.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\orange\acrossTab.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\orange\icon_arrow.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\orange\skin.css" />
+    <Content Include="Manage\static\h-ui.admin\skin\red\acrossTab-bg.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\red\acrossTab.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\red\icon_arrow.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\red\skin.css" />
+    <Content Include="Manage\static\h-ui.admin\skin\yellow\acrossTab-bg.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\yellow\acrossTab.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\yellow\icon_arrow.png" />
+    <Content Include="Manage\static\h-ui.admin\skin\yellow\skin.css" />
+    <Content Include="Manage\static\h-ui\css\H-ui.css" />
+    <Content Include="Manage\static\h-ui\css\H-ui.ie.css" />
+    <Content Include="Manage\static\h-ui\css\H-ui.min.css" />
+    <Content Include="Manage\static\h-ui\css\H-ui.reset.css" />
+    <Content Include="Manage\static\h-ui\images\acrossTab\acrossTab-bg.png" />
+    <Content Include="Manage\static\h-ui\images\acrossTab\acrossTab-close.png" />
+    <Content Include="Manage\static\h-ui\images\acrossTab\acrossTab.png" />
+    <Content Include="Manage\static\h-ui\images\dataTable\sort_asc.png" />
+    <Content Include="Manage\static\h-ui\images\dataTable\sort_both.png" />
+    <Content Include="Manage\static\h-ui\images\dataTable\sort_desc.png" />
+    <Content Include="Manage\static\h-ui\images\dropDown\icon-jt.png" />
+    <Content Include="Manage\static\h-ui\images\face\201.gif" />
+    <Content Include="Manage\static\h-ui\images\face\202.gif" />
+    <Content Include="Manage\static\h-ui\images\face\203.gif" />
+    <Content Include="Manage\static\h-ui\images\face\204.gif" />
+    <Content Include="Manage\static\h-ui\images\face\205.gif" />
+    <Content Include="Manage\static\h-ui\images\face\206.gif" />
+    <Content Include="Manage\static\h-ui\images\face\207.gif" />
+    <Content Include="Manage\static\h-ui\images\face\208.gif" />
+    <Content Include="Manage\static\h-ui\images\face\209.gif" />
+    <Content Include="Manage\static\h-ui\images\face\210.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\0.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\1.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\10.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\100.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\101.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\102.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\103.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\104.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\105.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\106.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\11.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\12.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\13.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\14.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\15.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\16.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\18.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\19.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\2.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\20.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\21.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\22.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\23.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\24.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\25.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\26.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\27.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\28.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\29.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\3.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\30.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\31.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\32.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\33.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\34.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\35.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\36.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\37.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\38.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\39.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\4.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\40.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\41.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\42.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\43.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\44.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\45.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\46.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\47.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\48.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\49.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\5.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\50.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\51.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\52.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\53.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\54.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\55.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\56.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\57.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\58.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\59.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\6.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\60.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\61.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\62.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\63.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\64.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\65.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\66.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\67.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\68.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\69.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\7.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\70.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\71.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\72.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\73.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\74.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\75.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\76.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\77.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\78.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\79.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\8.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\80.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\81.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\82.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\83.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\84.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\85.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\86.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\87.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\88.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\89.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\9.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\90.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\91.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\92.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\93.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\94.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\95.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\96.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\97.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\98.gif" />
+    <Content Include="Manage\static\h-ui\images\face\QQ\99.gif" />
+    <Content Include="Manage\static\h-ui\images\Hui-tags\empty.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\aero%402x.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\aero.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\blue%402x.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\blue.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\green%402x.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\green.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\grey%402x.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\grey.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\minimal%402x.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\minimal.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\orange%402x.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\orange.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\pink%402x.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\pink.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\purple%402x.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\purple.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\red%402x.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\red.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\yellow%402x.png" />
+    <Content Include="Manage\static\h-ui\images\iCheck\yellow.png" />
+    <Content Include="Manage\static\h-ui\images\iconpic-arrow.png" />
+    <Content Include="Manage\static\h-ui\images\jselect\iconpic-arrow-down2.png" />
+    <Content Include="Manage\static\h-ui\images\loading\loading-b.gif" />
+    <Content Include="Manage\static\h-ui\images\loading\loading-s.gif" />
+    <Content Include="Manage\static\h-ui\images\rollpic\unslider-arrow.png" />
+    <Content Include="Manage\static\h-ui\images\star\iconpic-star-S-default.png" />
+    <Content Include="Manage\static\h-ui\images\star\iconpic-star-S.png" />
+    <Content Include="Manage\static\h-ui\images\steps\step_arrow-active.png" />
+    <Content Include="Manage\static\h-ui\images\steps\step_arrow.png" />
+    <Content Include="Manage\static\h-ui\images\steps\step_bg-active.png" />
+    <Content Include="Manage\static\h-ui\images\steps\step_bg.png" />
+    <Content Include="Manage\static\h-ui\images\ucnter\avatar-default-S.gif" />
+    <Content Include="Manage\static\h-ui\images\ucnter\avatar-default.jpg" />
+    <Content Include="Manage\static\h-ui\images\ucnter\avatar.png" />
+    <Content Include="Manage\static\h-ui\images\ucnter\noavatar_small.gif" />
+    <Content Include="Manage\static\h-ui\images\validform\iconpic-error.png" />
+    <Content Include="Manage\static\h-ui\images\validform\iconpic-right.png" />
+    <Content Include="Manage\static\h-ui\images\validform\iconpic-warning.png" />
+    <Content Include="Manage\static\h-ui\images\verticalTab\tabNav-active.png" />
+    <Content Include="Manage\static\h-ui\images\verticalTab\tabNav-hover.png" />
+    <Content Include="Manage\static\h-ui\images\verticalTab\tabNav.png" />
+    <Content Include="Manage\static\h-ui\images\verticalTab\tabNav_right-active.png" />
+    <Content Include="Manage\static\h-ui\images\verticalTab\tabNav_right-hover.png" />
+    <Content Include="Manage\static\h-ui\images\verticalTab\tabNav_right.png" />
+    <Content Include="Manage\static\h-ui\images\verticalTab\tab_bg.png" />
+    <Content Include="Manage\static\h-ui\js\H-ui.js" />
+    <Content Include="Manage\static\h-ui\js\H-ui.min.js" />
+    <Content Include="Manage\system-base.html" />
+    <Content Include="Manage\system-category-add.html" />
+    <Content Include="Manage\system-category.html" />
+    <Content Include="Manage\system-data.html" />
+    <Content Include="Manage\system-log.html" />
+    <Content Include="Manage\system-shielding.html" />
+    <Content Include="Manage\temp\200x150.jpg" />
+    <Content Include="Manage\temp\big\chai.jpg" />
+    <Content Include="Manage\temp\big\chufang.jpg" />
+    <Content Include="Manage\temp\big\keting.jpg" />
+    <Content Include="Manage\temp\big\keting2.jpg" />
+    <Content Include="Manage\temp\big\keting3.jpg" />
+    <Content Include="Manage\temp\big\keting4.jpg" />
+    <Content Include="Manage\temp\big\shouju.jpg" />
+    <Content Include="Manage\temp\big\shufang.jpg" />
+    <Content Include="Manage\temp\big\weishengjian.jpg" />
+    <Content Include="Manage\temp\big\weishengjian2.jpg" />
+    <Content Include="Manage\temp\big\woshi.jpg" />
+    <Content Include="Manage\temp\big\youyongchi.jpg" />
+    <Content Include="Manage\temp\brand\ambio.jpg" />
+    <Content Include="Manage\temp\brand\dongpeng.jpeg" />
+    <Content Include="Manage\temp\brand\shengxiang.jpg" />
+    <Content Include="Manage\temp\product\Thumb\5345.jpg" />
+    <Content Include="Manage\temp\product\Thumb\6204.jpg" />
+    <Content Include="Manage\temp\Thumb\chai.jpg" />
+    <Content Include="Manage\temp\Thumb\chufang.jpg" />
+    <Content Include="Manage\temp\Thumb\keting.jpg" />
+    <Content Include="Manage\temp\Thumb\keting2.jpg" />
+    <Content Include="Manage\temp\Thumb\keting3.jpg" />
+    <Content Include="Manage\temp\Thumb\keting4.jpg" />
+    <Content Include="Manage\temp\Thumb\shouju.jpg" />
+    <Content Include="Manage\temp\Thumb\shufang.jpg" />
+    <Content Include="Manage\temp\Thumb\weishengjian.jpg" />
+    <Content Include="Manage\temp\Thumb\weishengjian2.jpg" />
+    <Content Include="Manage\temp\Thumb\woshi.jpg" />
+    <Content Include="Manage\temp\Thumb\youyongchi.jpg" />
+    <Content Include="Manage\user-add.html" />
+    <Content Include="Manage\user-list.html" />
+    <Content Include="Manage\user-password-edit.html" />
+    <Content Include="Manage\user-show.html" />
+    <Content Include="Manage\Welcome.aspx" />
+    <Content Include="Manage\welcome.html" />
+    <Content Include="Manage\YZHospitalList.aspx" />
+    <Content Include="Manage\YZHospitalManage.aspx" />
+    <Content Include="Manage\_blank.html" />
+    <Content Include="Manage\_footer.html" />
+    <Content Include="Manage\_header.html" />
+    <Content Include="Manage\_menu.html" />
+    <Content Include="Manage\_meta.html" />
+    <Content Include="Manage\【开发必读】文档目录.txt" />
+    <Content Include="Manage\副本 index.html" />
+    <Content Include="Manage\YZDistrictList.aspx" />
+    <Content Include="Manage\YZDistrictManage.aspx" />
+    <Content Include="Manage\YZEmployeeList.aspx" />
+    <Content Include="Manage\YZEmployeeManage.aspx" />
+    <Content Include="Manage\YZDeviceManage.aspx" />
+    <Content Include="Manage\YZDeviceList.aspx" />
+    <Content Include="Manage\YZHealthDetailList.aspx" />
+    <Content Include="Manage\Index.aspx" />
+    <Content Include="Scripts\echarts.js" />
+    <Content Include="Scripts\echarts.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Webservice\ManageProject.asmx" />
+    <Content Include="Webservice\YunZhiService.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Data\StringUtils.cs" />
+    <Compile Include="App_Data\ToolHelper.cs" />
+    <Compile Include="App_Data\UserHelper.cs" />
+    <Compile Include="App_Data\Validator.cs" />
+    <Compile Include="Manage\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\lib\ueditor\1.4.3\net\App_Code\Config.cs" />
+    <Compile Include="Manage\lib\ueditor\1.4.3\net\App_Code\ConfigHandler.cs" />
+    <Compile Include="Manage\lib\ueditor\1.4.3\net\App_Code\CrawlerHandler.cs" />
+    <Compile Include="Manage\lib\ueditor\1.4.3\net\App_Code\Handler.cs" />
+    <Compile Include="Manage\lib\ueditor\1.4.3\net\App_Code\ListFileHandler.cs" />
+    <Compile Include="Manage\lib\ueditor\1.4.3\net\App_Code\NotSupportedHandler.cs" />
+    <Compile Include="Manage\lib\ueditor\1.4.3\net\App_Code\PathFormater.cs" />
+    <Compile Include="Manage\lib\ueditor\1.4.3\net\App_Code\UploadHandler.cs" />
+    <Compile Include="Manage\List.Master.cs">
+      <DependentUpon>List.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\List.Master.designer.cs">
+      <DependentUpon>List.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\WrapperHandler\AHttpHandler.cs" />
+    <Compile Include="Manage\WrapperHandler\GetEmployeeList.ashx.cs">
+      <DependentUpon>GetEmployeeList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\YZHospitalList.aspx.cs">
+      <DependentUpon>YZHospitalList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\YZHospitalList.aspx.designer.cs">
+      <DependentUpon>YZHospitalList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\YZHospitalManage.aspx.cs">
+      <DependentUpon>YZHospitalManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\YZHospitalManage.aspx.designer.cs">
+      <DependentUpon>YZHospitalManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\YZDistrictList.aspx.cs">
+      <DependentUpon>YZDistrictList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\YZDistrictList.aspx.designer.cs">
+      <DependentUpon>YZDistrictList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\YZDistrictManage.aspx.cs">
+      <DependentUpon>YZDistrictManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\YZDistrictManage.aspx.designer.cs">
+      <DependentUpon>YZDistrictManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\YZEmployeeList.aspx.cs">
+      <DependentUpon>YZEmployeeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\YZEmployeeList.aspx.designer.cs">
+      <DependentUpon>YZEmployeeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\YZEmployeeManage.aspx.cs">
+      <DependentUpon>YZEmployeeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\YZEmployeeManage.aspx.designer.cs">
+      <DependentUpon>YZEmployeeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\YZDeviceManage.aspx.cs">
+      <DependentUpon>YZDeviceManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\YZDeviceManage.aspx.designer.cs">
+      <DependentUpon>YZDeviceManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\YZDeviceList.aspx.cs">
+      <DependentUpon>YZDeviceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\YZDeviceList.aspx.designer.cs">
+      <DependentUpon>YZDeviceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\YZHealthDetailList.aspx.cs">
+      <DependentUpon>YZHealthDetailList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\YZHealthDetailList.aspx.designer.cs">
+      <DependentUpon>YZHealthDetailList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Webservice\ManageProject.asmx.cs">
+      <DependentUpon>ManageProject.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Webservice\YunZhiService.asmx.cs">
+      <DependentUpon>YunZhiService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YUNZHI.DAL\YUNZHI.DAL.csproj">
+      <Project>{93a7f090-a89f-4e2c-a8be-c1c8b5c69bba}</Project>
+      <Name>YUNZHI.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Manage\H-ui前端框架官方网站.URL" />
+    <Content Include="Manage\lib\hcharts\Highcharts\5.0.6\license.pdf" />
+    <Content Include="Manage\lib\Hui-iconfont\1.0.8\iconfont.eot" />
+    <Content Include="Manage\lib\Hui-iconfont\1.0.8\iconfont.ttf" />
+    <Content Include="Manage\lib\Hui-iconfont\1.0.8\iconfont.woff" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\js\lightbox-plus-jquery.min.map" />
+    <Content Include="Manage\lib\lightbox2\2.8.1\js\lightbox.min.map" />
+    <Content Include="Manage\lib\webuploader\0.1.5\images\icons.psd" />
+    <Content Include="Manage\lib\webuploader\0.1.5\images\progress.psd" />
+    <Content Include="Manage\lib\webuploader\0.1.5\README.md" />
+    <Content Include="Manage\lib\webuploader\0.1.5\server\fileupload.php" />
+    <Content Include="Manage\lib\webuploader\0.1.5\server\fileupload2.php" />
+    <Content Include="Manage\lib\webuploader\0.1.5\server\preview.php" />
+    <Content Include="Manage\LICENSE.md" />
+    <Content Include="Manage\logo.psd" />
+    <Content Include="Manage\README.md" />
+    <Content Include="Manage\static\h-ui.admin\scss\H-ui.admin.scss" />
+    <Content Include="Manage\static\h-ui.admin\scss\H-ui.login.scss" />
+    <Content Include="Manage\temp\Thumbs.db" />
+    <Content Include="Manage\List.Master" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\config.json" />
+    <Content Include="Manage\lib\ueditor\1.4.3\jsp\controller.jsp" />
+    <Content Include="Manage\lib\ueditor\1.4.3\net\config.json" />
+    <Content Include="Manage\lib\ueditor\1.4.3\net\controller.ashx" />
+    <Content Include="Manage\lib\ueditor\1.4.3\net\README.md" />
+    <Content Include="Manage\lib\ueditor\1.4.3\net\Web.config" />
+    <Content Include="Manage\lib\ueditor\1.4.3\php\action_crawler.php" />
+    <Content Include="Manage\lib\ueditor\1.4.3\php\action_list.php" />
+    <Content Include="Manage\lib\ueditor\1.4.3\php\action_upload.php" />
+    <Content Include="Manage\lib\ueditor\1.4.3\php\config.json" />
+    <Content Include="Manage\lib\ueditor\1.4.3\php\controller.php" />
+    <Content Include="Manage\lib\ueditor\1.4.3\php\Uploader.class.php" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\jquery-1.10.2.min.map" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\video-js\font\vjs.eot" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\video-js\font\vjs.ttf" />
+    <Content Include="Manage\lib\ueditor\1.4.3\third-party\video-js\font\vjs.woff" />
+    <Content Include="Manage\lib\icheck\Thumbs.db" />
+    <Content Include="Manage\WrapperHandler\GetEmployeeList.ashx" />
+    <None Include="Properties\PublishProfiles\yzyl.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="commonassebly\" />
+    <Folder Include="Manage\upload\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5160</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2229/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

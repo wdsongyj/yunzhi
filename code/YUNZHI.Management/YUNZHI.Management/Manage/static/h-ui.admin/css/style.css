@@ -1,0 +1,12 @@
+﻿@charset "utf-8";
+/* 你自己的样式 */
+.jxbottom{line-height: 22px; text-align: center; margin-top: 10px;}
+.pages { color: #999; }
+.pages a:visited {padding: 2px 5px; border: solid 1px #ddd; background: #fff; text-decoration: none;}
+.pages a, .pages .cpb { text-decoration:none;padding: 2px 5px 2px 5px; border: 1px solid #ddd;background: #ffffff;margin:0 2px; font-size:13px; color:#000;}
+.pages a:hover { background-color: #E61636; color:#fff;border:1px solid #E61636; text-decoration:none;}
+.pages .cpb { font-weight: bold; color: #fff; background: #E61636; border:1px solid #E61636;}
+.pages .textreport {margin-bottom:4px;}
+.pages .buttonreport {text-decoration:none;padding: 2px 5px 2px 5px; border: 1px solid #ddd;background: #ffffff;  font-size:13px; color:#000;margin-left:3px;margin-bottom:5px;}
+.cis{text-align:right;font-size:14px;}
+

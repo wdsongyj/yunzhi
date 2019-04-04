@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>智能推送</title>
+		<style>
+			body,
+			ul,
+			li {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			li {
+				list-style: none;
+				line-height: 25px;
+			}
+			
+			.div-title {
+				font-size: 15px;
+				margin-left: 10px;
+			}
+			
+			.div-title a {
+				margin: 10px;
+			}
+		</style>
+		<script type="text/javascript">
+			function filllongtong(jsonStr) {
+				var zhengzhuang = document.getElementById("span_zhengzhuang");
+				var chati = document.getElementById("span_chati");
+				var zhenduan = document.getElementById("span_zhenduan");
+				//var str = "var jsonData=" + jsonStr+";";
+				//eval(str);
+				var jsonData=eval('('+jsonStr+')');
+				var zhengzhuangjson = jsonData.symptom;
+				var chatijson = jsonData.labs;
+				var zhenduanjson = jsonData.dis;
+				clearHtml();
+				sethtml("span_zhengzhuang", zhengzhuangjson);
+				sethtml("span_chati", chatijson);
+				sethtml("span_zhenduan", zhenduanjson);
+			}
+
+			function sethtml(spanid, data) {
+				var curElement = document.getElementById(spanid);
+				for(var i=0;i<data.length;i++){
+					var addAElement = document.createElement('a');
+					addAElement.href = "javascript:;";
+					addAElement.innerHTML = data[i].name;
+					curElement.appendChild(addAElement);
+				}
+			}
+
+			function clearHtml() {
+			    var zhengzhuang = document.getElementById("span_zhengzhuang");
+			    zhengzhuang.innerHTML = "";
+			    var chati = document.getElementById("span_chati");
+			    chati.innerHTML = "";
+			    var zhenduan = document.getElementById("span_zhenduan");
+			    zhenduan.innerHTML = "";
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="div_main">
+			<ul id="ul_main">
+				<li>
+					<div class="div-title">
+						<span>>伴随症状:</span>
+						<span id="span_zhengzhuang">
+							
+						</span>
+					</div>
+				</li>
+				<li>
+					<div class="div-title">
+						<span>>查&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;体:</span>
+						<span id="span_chati">
+							
+						</span>
+					</div>
+				</li>
+				<li>
+					<div class="div-title">
+						<span>>诊&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;断:</span>
+						<span id="span_zhenduan">
+							
+						</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

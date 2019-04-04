@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5EE3485-8327-4BA0-89C0-65E150E4E337}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YunZhi.Client</RootNamespace>
+    <AssemblyName>YunZhi.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastReport">
+      <HintPath>..\打印dll\FastReport.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>commonassebly\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmCtr\UCArchives.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmCtr\UCArchives.Designer.cs">
+      <DependentUpon>UCArchives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCtr\UCCreateArchives.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmCtr\UCCreateArchives.Designer.cs">
+      <DependentUpon>UCCreateArchives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCtr\UCLangTong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmCtr\UCLangTong.Designer.cs">
+      <DependentUpon>UCLangTong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCtr\UCSearchArchives.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmCtr\UCSearchArchives.Designer.cs">
+      <DependentUpon>UCSearchArchives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCtr\UCSearchProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmCtr\UCSearchProject.Designer.cs">
+      <DependentUpon>UCSearchProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoginNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoginNew.Designer.cs">
+      <DependentUpon>FrmLoginNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainNew.Designer.cs">
+      <DependentUpon>FrmMainNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmCreateArchives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmCreateArchives.Designer.cs">
+      <DependentUpon>FrmCreateArchives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmDetail.Designer.cs">
+      <DependentUpon>FrmDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmReadID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmReadID.Designer.cs">
+      <DependentUpon>FrmReadID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmSearchArchives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmSearchArchives.Designer.cs">
+      <DependentUpon>FrmSearchArchives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmSearchProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmSearchProject.Designer.cs">
+      <DependentUpon>FrmSearchProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmUpdateRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmUpdateRecord.Designer.cs">
+      <DependentUpon>FrmUpdateRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmWebBrower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmWebBrower.Designer.cs">
+      <DependentUpon>FrmWebBrower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web References\YZService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmCtr\UCArchives.resx">
+      <DependentUpon>UCArchives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCtr\UCCreateArchives.resx">
+      <DependentUpon>UCCreateArchives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCtr\UCLangTong.resx">
+      <DependentUpon>UCLangTong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCtr\UCSearchArchives.resx">
+      <DependentUpon>UCSearchArchives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCtr\UCSearchProject.resx">
+      <DependentUpon>UCSearchProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoginNew.resx">
+      <DependentUpon>FrmLoginNew.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainNew.resx">
+      <DependentUpon>FrmMainNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmCreateArchives.resx">
+      <DependentUpon>FrmCreateArchives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmDetail.resx">
+      <DependentUpon>FrmDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmReadID.resx">
+      <DependentUpon>FrmReadID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmSearchArchives.resx">
+      <DependentUpon>FrmSearchArchives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmSearchProject.resx">
+      <DependentUpon>FrmSearchProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmUpdateRecord.resx">
+      <DependentUpon>FrmUpdateRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmWebBrower.resx">
+      <DependentUpon>FrmWebBrower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\YZService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\YZService\YunZhiResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\YZService\YunZhiService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Paway.Windows.Forms\Paway.Windows.Forms.csproj">
+      <Project>{a9beaf6b-172e-41b6-874d-156557f7350e}</Project>
+      <Name>Paway.Windows.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Paway.Windows.Helper\Paway.Windows.Helper.csproj">
+      <Project>{5a772b08-c0bc-4b9c-9364-9460badf23a1}</Project>
+      <Name>Paway.Windows.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Paway.Windows.Resource\Paway.Windows.Resource.csproj">
+      <Project>{6902413a-d983-4845-83fc-e9f8ca042ab2}</Project>
+      <Name>Paway.Windows.Resource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Paway.Windows.Win32\Paway.Windows.Win32.csproj">
+      <Project>{6dcae3d1-f084-49f4-b21f-25d906e02567}</Project>
+      <Name>Paway.Windows.Win32</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YunZhi.BLL\YunZhi.BLL.csproj">
+      <Project>{eddc2628-74a2-4458-b636-8df10cc6a8df}</Project>
+      <Name>YunZhi.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YunZhi.ControlLib\YunZhi.ControlLib.csproj">
+      <Project>{f4301f14-1279-4aa7-a405-019d32547110}</Project>
+      <Name>YunZhi.ControlLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YunZhi.Core\YunZhi.Core.csproj">
+      <Project>{5fe87a08-6b1c-4a3b-b71f-846045b71dd0}</Project>
+      <Name>YunZhi.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YunZhi.DAL\YunZhi.DAL.csproj">
+      <Project>{6a29f528-43b6-44e3-b4cb-a3269e4e9265}</Project>
+      <Name>YunZhi.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YunZhi.ICCard\YunZhi.ICCard.csproj">
+      <Project>{085452d6-bb38-4a46-9a95-9491f14c7cf0}</Project>
+      <Name>YunZhi.ICCard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YunZhi.Model\YunZhi.Model.csproj">
+      <Project>{f5688e2c-371a-4aa4-9b97-934cf5532083}</Project>
+      <Name>YunZhi.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YunZhi.Util\YunZhi.Util.csproj">
+      <Project>{46847761-b3ee-4407-819b-c4b5687f6210}</Project>
+      <Name>YunZhi.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\background.png" />
+    <Content Include="Images\ID_Error.png" />
+    <Content Include="Images\loginBackground.png" />
+    <Content Include="Images\loginBackground1.png" />
+    <Content Include="Images\logo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\logo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logo1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\logo2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zl.ico" />
+    <Content Include="LangTong.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Web References\YZService\YunZhiService.disco" />
+    <None Include="Images\logo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://47.104.235.16/yzyl/Webservice/YunZhiService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\YZService\</RelPath>
+      <UpdateFromURL>http://47.104.235.16/yzyl/Webservice/YunZhiService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>YunZhi_Client_YZService_YunZhiService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
